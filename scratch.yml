@@ -1,0 +1,159 @@
+version: 1.0.{build}
+
+
+platform: 
+  - x86
+  - x64
+  
+configuration:
+  - Release
+  - test
+  
+environment:
+  my_var1: value1
+  my_var2: value2
+  matrix:
+
+    - my_var3: new-value
+	
+test_script:
+  - ps: Write-Host "common test script"
+  - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
+  
+#matrix:
+ # exclude:
+  #  - configuration: Release
+   #   my_var2: value2
+   
+for:
+  #-
+   # branches:
+    #  only:
+     #   - master
+    #configuration: 
+     # - Release
+      #- test
+    #environment:
+      #matrix:
+        #- my_var1: not-value1
+        #- my_var3: new-value	
+  #-
+   # branches:
+    #  only:
+     #   - /dev-.*/ 
+    #platform: Any CPU
+    #test_script:
+     # - echo "overriding common test script"
+  -
+    matrix:
+      only: 
+        - configuration: test
+          my_var1: value1
+    environment:
+      my_var1: not-value1
+    test_script:
+      - ps: write-host "for-matrix test script"
+      - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
+
+build: off
+
+# platform: 
+  # - x86
+  # - x64
+# configuration: Debug
+# environment:
+  # my_var1: value1
+  # my_var2: value2
+  # matrix:
+    # - my_var1: overridden-value1
+    # - my_var3: value3
+# test_script:
+  # - ps: Write-Host "common test script"
+# matrix:
+  # exclude:
+    # - configuration: Release
+      # my_var2: value2
+# for:
+  # -
+    # matrix:
+      # only: 
+        # - configuration: test
+          # my_var1: value1
+    # test_script:
+      # - ps: write-host "for-matrix test script"
+
+
+  # -
+    # matrix:
+      # only: 
+        # - configuration: test
+          # my_var1: value1
+    # test_script:
+      # - ps: write-host "for-matrix test script"
+
+
+
+      
+      
+      
+version: 1.0.{build}
+
+#matrix:
+# fast_finish: true
+#platform:
+#  - x86
+#  - Any CPU
+#configuration:
+#  - Debug
+#  - Release
+platform: 
+  - x86
+  - x64
+configuration:
+  - Release
+  - test
+environment:
+  my_var1: value1
+  my_var2: value2
+  #my_var3: value3
+  matrix:
+    #- my_var1: not-value1
+    - my_var3: new-value
+test_script:
+  - ps: Write-Host "common test script"
+  - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
+#matrix:
+ # exclude:
+  #  - configuration: Release
+   #   my_var2: value2
+for:
+  #-
+   # branches:
+    #  only:
+     #   - master
+    #configuration: 
+     # - Release
+      #- test
+    #environment:
+      #matrix:
+        #- my_var1: not-value1
+        #- my_var3: new-value	
+  #-
+   # branches:
+    #  only:
+     #   - /dev-.*/ #regular expressions can also be used to match several branches
+    #platform: Any CPU
+    #test_script:
+     # - echo "overriding common test script"
+  -
+    matrix:
+      only: 
+        - configuration: test
+          my_var3: new-value
+    environment:
+      my_var1: not-value1
+    test_script:
+      - ps: write-host "for-matrix test script"
+      - echo %configuration% %my_var1% %my_var2% %my_var3%
+
+build: off

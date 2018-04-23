@@ -1,159 +1,28 @@
-version: 1.0.{build}
-
-
-platform: 
-  - x86
-  - x64
-  
-configuration:
-  - Release
-  - test
-  
-environment:
-  my_var1: value1
-  my_var2: value2
-  matrix:
-
-    - my_var3: new-value
-	
-test_script:
-  - ps: Write-Host "common test script"
-  - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
-  
-#matrix:
- # exclude:
-  #  - configuration: Release
-   #   my_var2: value2
-   
-for:
-  #-
-   # branches:
-    #  only:
-     #   - master
-    #configuration: 
-     # - Release
-      #- test
-    #environment:
-      #matrix:
-        #- my_var1: not-value1
-        #- my_var3: new-value	
-  #-
-   # branches:
-    #  only:
-     #   - /dev-.*/ 
-    #platform: Any CPU
-    #test_script:
-     # - echo "overriding common test script"
-  -
-    matrix:
-      only: 
-        - configuration: test
-          my_var1: value1
-    environment:
-      my_var1: not-value1
-    test_script:
-      - ps: write-host "for-matrix test script"
-      - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
-
-build: off
-
-# platform: 
-  # - x86
-  # - x64
-# configuration: Debug
-# environment:
-  # my_var1: value1
-  # my_var2: value2
-  # matrix:
-    # - my_var1: overridden-value1
-    # - my_var3: value3
-# test_script:
-  # - ps: Write-Host "common test script"
-# matrix:
-  # exclude:
-    # - configuration: Release
-      # my_var2: value2
-# for:
-  # -
-    # matrix:
-      # only: 
-        # - configuration: test
-          # my_var1: value1
-    # test_script:
-      # - ps: write-host "for-matrix test script"
-
-
-  # -
-    # matrix:
-      # only: 
-        # - configuration: test
-          # my_var1: value1
-    # test_script:
-      # - ps: write-host "for-matrix test script"
-
-
-
-      
-      
-      
-version: 1.0.{build}
-
-#matrix:
-# fast_finish: true
-#platform:
-#  - x86
-#  - Any CPU
-#configuration:
-#  - Debug
-#  - Release
-platform: 
-  - x86
-  - x64
-configuration:
-  - Release
-  - test
-environment:
-  my_var1: value1
-  my_var2: value2
-  #my_var3: value3
-  matrix:
-    #- my_var1: not-value1
-    - my_var3: new-value
-test_script:
-  - ps: Write-Host "common test script"
-  - ps: write-host $env:configuration $env:my_var1 $env:my_var2 $env:my_var3
-#matrix:
- # exclude:
-  #  - configuration: Release
-   #   my_var2: value2
-for:
-  #-
-   # branches:
-    #  only:
-     #   - master
-    #configuration: 
-     # - Release
-      #- test
-    #environment:
-      #matrix:
-        #- my_var1: not-value1
-        #- my_var3: new-value	
-  #-
-   # branches:
-    #  only:
-     #   - /dev-.*/ #regular expressions can also be used to match several branches
-    #platform: Any CPU
-    #test_script:
-     # - echo "overriding common test script"
-  -
-    matrix:
-      only: 
-        - configuration: test
-          my_var3: new-value
-    environment:
-      my_var1: not-value1
-    test_script:
-      - ps: write-host "for-matrix test script"
-      - echo %configuration% %my_var1% %my_var2% %my_var3%
-
-build: off
+Z[]¶5â‡d¨JŽk¿aÉÅ÷Ð6ø›ouÃ§ÕNŸŒtì§`^¯úÀÒÕsÏ¬Ð·™ÂÅ3-l#Rþ
+¾¾—±&%Í>í:SÄ	6]FÁ©ÂQ¼Îõ©mxFœ¸s~‹®Ôpo’ú¹V~TÒœ¼¼O#²ÊßM^ûÿ¦½Ùwªçu’¾¿#:U°ˆvóimÄ0HÿÀVLº»5üÆÅ#À€!dL
+œ  8r0‡Â¼f:½ÛÁax\ÊÊÔ*{Ž½K‰–2º­h&Êì:jÏ}ëåë(ã3õsLüg`(',ªExÌÇ ­Ë±{º˜#ÚÊ¦`ÉSž±Tß$ ›«ÔUá”/Ó´FŒMZFHÙ2Ûý#µßi\üó|/MœsL¨—Ñ¾˜»Aˆ»Õ>_¿÷Ø©Æ;_û6¹Î<—ƒ¬äå Ÿ¦ôÀþþ±›Ï$"±“yFBYýKûf ˆ@µEÇÝ”xv—ÄbÊÍM<ZÐÍ¤³ÍÇÇB/Ð×ÒŠÉõy¹8a+‚CÅ<Éñ¡ÿñ'c¥8õ¥±³øÌ•í*è	W*7´ì¬í»ø6`32sW
+6_ÓÁül¿>~¸—Ï›
+¼OgxÏË¶˜~Ù¾­N’ñ¡é2°T1–þ(ú
+@TÖEÂ*ñ»ð8G}+ $þqkóo,uÿê‘rüžÑùYý§V¹ÛÀ¾€[‡Àf’‰%&žrXÝõ•žÅÀ%e™Œ "
+«‚Ð_ËœeFÑâ2Åì0ÀÑ8B‘ ÈM$ß­"ó>ná> ’$83 Ã¾L…À×F"h½¸gØˆ.ÌÑ¯ïd)MuÐF‡FÇbKÒ^¼kgV¾a–ˆÁIJ7DÄß÷@ºØ5IßX‚ˆà›Àó‚Ñ)Q%”­R'¬i›|¹LÒËRûâ:?o‘¸­§Ù9­½=éx•» ¯Þ—€?¥Ã9Äÿø×d¤­«°?íÎu²¨”æ1¢ÐR…ô€ž^‚
+sµ*£“æ\w,³®m¯ÔÈ®o4ÓöÒ¥‰ÛWá)Ñ;ušýëõô$ÉåHcô¸;‘\â"ÁÅAûBco%{YŽl0Ý·Jçå]0/V H/¹éV‹m¿g!­(\=É,>Þl!­2°‚=–‡o+Ñf…À½ÏLu1ÝöTÎú?p.;ë3rÎöÔ5!Ù÷ê©ëÝKˆ2±užÈõwš±Õ»"(¯Y‡¡Â:Ü‡°2†êkîÿ˜@ùÙU©Ü>hÐé%ÑÖ¨©”Mj# 
+Æ*’§ÀIÑ¾`+ÛQûŒrÁ›}g~DZkRà°aQ&Z:œz#}œññu%Er(qÍ9ËD¨
+:ÒLüÛ	ƒ 9á¸Â2Áï7í(G‚ËØîæœÓS&ú›…¯8vßÊkÚ?þî–&ˆ´ÎpÒ{­Å6
+Ôs5åž´{?ˆ5´ˆîobÿ ^'¨ógÙƒ¦P·úß×Í¹é$ÞTq™ŒJ¢„GÝ¿+ˆÈ‰Ë|Ðºé¯å}#6ê¨~°øaF”]=ö¤ƒ¦K\`Þ}ÏW3í~ýcw‘æ²]Y¸L+$¦<OÇ
+ŒÔÁ%²']µ?¯ÿÄ²B.%Åâ3­ZWcœáÊ‡ùžªhk Ý„³Á-ÄõA%(­P–²–ÈxtÍ¿m@Ya%õ5³*}êcÚæG
+#$ÌœYÂû?%Ã«^0×Šùùv‘($ñYÒh"ÃhÏÀÁYÜ¹
+¼ó§Xµšrê››°Ô^
+HÁÄqWÉ0>w…—Ñé{Ð8ãóŒ{å
+$bÄ|~	Üî(°A!SÛêXoQär_6ð“,úN=¢“ß|MŒééô)sÀäNÌóÁ ‰ãÊ:"¾K5©€Ä	3˜§éU-+î? ‘ÖûÑ½5ˆÙ6µy¶m=‹cçhùì¿”˜ôê@ÁÍyÊqçÆ®ðÿ|® ˆày?8)¿Õkñ‡¹‹oj*Ä.ôº?ïSÄõÚxö÷Píõˆ:¼TS¿^õ@úûî¦'yt¼Ý/¡=	|'M­•o)/á„½&0Þ-y€ªÍ˜Œ†×>|u˜^YØ¯¼ÓÄ ðÂï¸\¶ ˜kÿù¯žF}Jž¥LÓÛ³Ø¶ÓOõÅ¾–$°ªg_ 	›YüÁ=4B›PÇé9¥
+Ýë
+Ä# ý›­,P?{qç«½mæš®íŒ¯»‰:gÕí)
+ÃîJcHÊyW±Å]É¦/µ—æµvÔ×¦á)ÚtŒSÉs­3u,ÌÂ|›i³BÆÌÃÑ¨wmJóa½w™"eé}fø"“T©ËŠ«SÍÆÀLŠññk,)¯Š_×ŸUþ8AHD…yd)Ú4%~þm‚±ƒvq ]+;Öý˜ ZK6N ŒŠ¿ãåÍÑ™ÂëÅB¤ìµºµ…à¢áC‚-cP+tÖùª²lú»Róå?­ói‚Ê/æÍtö[Ê
+·I[ü3õ¾=GZyH>÷tòe£óù`À˜w¸¨Ø9œDçl-¹úŸArùƒYíDäß7¨Ãº½ª@%Åçðn]Úãã| XâÚ9®pwºŠ·æÅ«1Ò±Pi¦Íäk=({\3ƒˆyh­
+žÖÖ4Ìç<û>ç¸-Î–@÷€Ò%ë012“Q,cÖÿÎP‡i~÷þ›»þôúÛepy¬‰›âÓÌf#¸³1&pSµcDó:6ÛÊ$%u®ê¸r"8Úo¡ÎŸp[£r‘nê‡Tm”žœºlãl²âfÂÊ÷¹œwe^P7³øŽ4]Æ ¤¡»Ó',rÙQ3ý¶ŠôR‰Ðä£“Xàð)=½u²/0ÛÊË³µÁ¤ðïìK†S¡j1ÑÃñ7n—Qr†	Ýs)ÝHÀzvÀŽÖ«€ôÔø}aq”»µ—g›ñNÝ|4½›7÷÷ ½H#OéoÊ¿Ää½ª›ÜºY´9Zp* Â×du%MéÏŠ1_ËùA&™
+®8úc.—‚Þh»ìÓ%JŸ¼©T EN¼­ùJ>~š	 YË‡'YD›²8K•=Ï¦aí;âöµhi‰;s»ÉóR™À¿AÐL>ðçK9}©¤…Çˆeœl]ñ[Râ4HË‹£Ït~c¶®Ý‘VÛ* žüo«}Ó˜jš‘….¦X×õ•k°ã­7JÞÑš‡Étñ
+“*YÛýÛy][=¡äG×<Jßj3 4äe­ôÕ3(e@UXœÝ×Ž˜X ´¯£Â©²Å”ÏéYEZ½³ÔÊ©ÐÍa&m°ÑY¦iLÞ«ùOçÌÃUxg@ O–~X‡±}>h+ÿ&|WµÖkl†"K”—T
+¢¾2]‹$øØ8Î?¶!tŒ$0m©àâ·aÏ&ªÊ^ýHòÔÚŒ@4âÐ³|ÞàÞ Ož’O{¾|Úÿ
+ãÊó6<tÈ)¨›‡µ:hJ[ZCÔ6DÊ²Y*Áì$Rè&O-¬LX$è7íÀ¾¼X%ŒF +ÜFôœ´Ðt®êA”z{]VoÊgmÎM
+Œ³i(çýó²ºÄNÿüÑz}ªƒU‚£SœýÄ³rØ,“yÉAIåƒ²ÌfM$ +a
+X²/—xêû÷5t4j9®%6EJýÿð²åVÊõ	3¬££“›ÆY}§Ãôò…36dõcJð¶éç£™tÜ¤í7Ö°—.DÂ£JšrºÃÃNÐÍ‹®§‡fkV)	dVc½z›-©l/]$ C¤ÙŒ’	j($öâ˜Ÿ‚ Dì¬aNSe¯;ÊðCÙw›j‰7Óáëí‘bpvÔês¢¬§ÈôW–
+yyfÇqÿ¤]Ó,§°AÂ¤­_ÑÈiQ•„Œ#¸\p·S‰‡>·KzË“¿? Úî5»”fýaØRÎ‹¹­&ã}{úbÇtÄBØ”ÏùñÐÆ9ŸcP‚›Ì|èhB!4èbvuxJÌ-yÉ­OëÉE†®ÿ½¾§ÔôÓ‹Ós¸¸Èˆ]n)†°õ

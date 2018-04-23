@@ -30,7 +30,7 @@ install:
   - cmd: appveyor-tools\secure-file -decrypt etc\config.enc -out %USERPROFILE%\.aws\config -secret %my_secret%
   - cmd: appveyor-tools\secure-file -decrypt etc\credentials.enc -out %USERPROFILE%\.aws\credentials -secret %my_secret%
   - sh: mkdir $HOME/.aws
-  - sh: ./appveyor-tools/secure-file -decrypt /etc/scratch.yml.enc -out $HOME/.aws/config -secret $my_secret
+  - sh: ./appveyor-tools/secure-file -decrypt etc/scratch.yml.enc -out $HOME/.aws/config -secret $my_secret
   #- sh: ./appveyor-tools/secure-file -decrypt etc/credentials.enc -out $HOME/.aws/credentials -secret $my_secret
 
 # Invoke Pester to run all of the unit tests, then save the results into XML in order to populate the AppVeyor tests section

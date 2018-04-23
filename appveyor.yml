@@ -19,7 +19,7 @@ pull_requests:
 
 environment:
   my_secret:
-    secure: R1E58v1pOH1cNL0GsiCsaLLFTJH/0RhSsCdbSKklbvr7AFveNljIBugamospvOe+
+    secure: T3wJafLa9ACZg3XVzJb+VA==
 
 # Install Pester for testing
 install:
@@ -30,8 +30,8 @@ install:
   - cmd: appveyor-tools\secure-file -decrypt etc\config.enc -out %USERPROFILE%\.aws\config -secret %my_secret%
   - cmd: appveyor-tools\secure-file -decrypt etc\credentials.enc -out %USERPROFILE%\.aws\credentials -secret %my_secret%
   - sh: mkdir $HOME/.aws
-  - sh: ./appveyor-tools/secure-file -decrypt etc/config.enc -out $HOME/.aws/config -secret $my_secret
-  - sh: ./appveyor-tools/secure-file -decrypt etc/credentials.enc -out $HOME/.aws/credentials -secret $my_secret
+  - sh: ./appveyor-tools/secure-file -decrypt ./scratch.yml.enc -out $HOME/.aws/config -secret $my_secret
+  #- sh: ./appveyor-tools/secure-file -decrypt etc/credentials.enc -out $HOME/.aws/credentials -secret $my_secret
 
 # Invoke Pester to run all of the unit tests, then save the results into XML in order to populate the AppVeyor tests section
 # If any of the tests fail, consider the pipeline failed

@@ -19,7 +19,7 @@ pull_requests:
 
 environment:
   my_secret:
-    secure: MamcGBm5H8YOXhNjs71PDTkHpJBzlMlfcIbJ65KtejE=
+    secure: bLgcwaW7kqGstKk6uMr5hg==
 
 # Install Pester for testing
 install:

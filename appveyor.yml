@@ -19,8 +19,8 @@ pull_requests:
 
 environment:
   my_secret:
-    secure: KUVKo2T+EHMZTJ/yjSthGQ==
-
+    secure: 91zC5ZTzBsk8W2eqHmmHxA==
+    
 # Install Pester for testing
 install:
   - ps: $PSVersionTable

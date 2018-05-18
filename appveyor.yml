@@ -3,7 +3,9 @@ image:
 - Ubuntu
 
 build: off
-
+configuration:
+  - test
+  - test2
 init:
   - sh: printenv
 
